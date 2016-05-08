@@ -14,7 +14,6 @@ let kCloseSafariViewControllerNotification = "kCloseSafariViewControllerNotifica
 
 class ViewController: UIViewController,SFSafariViewControllerDelegate {
   
-  @IBOutlet weak var textView: UITextView!
   var safariVC: SFSafariViewController?
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -58,8 +57,8 @@ class ViewController: UIViewController,SFSafariViewControllerDelegate {
       
       SVProgressHUD.dismiss()
       switch result {
-      case .Success(let songs):
-        self.textView.text = songs
+      case .Success(_):
+        print("Success")
       case .Failure(let error):
         print(error)
       }
